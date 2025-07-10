@@ -26,28 +26,23 @@ A simple blog application with user authentication and CRUD operations for blog 
 ## Installation
 
 1. Clone the repository:
-bash
-git clone https://github.com/yourusername/flask-blog.git
-cd flask-blog
 
-3. Create a virtual environment (recommended):
-bash
-python -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+![image](https://github.com/user-attachments/assets/fc1f0e55-1a69-4fae-9b9e-85b346eb4007)
 
-4. Install dependencies:
-bash
-pip install -r requirements.txt
+2. Create a virtual environment (recommended):
 
-5. Set up the database:
-bash
-python
->>> from app import create_tables
->>> create_tables()
->>> exit()
+![image](https://github.com/user-attachments/assets/a71a5db5-d37a-44bd-b97a-29ee07436ed8)
+
+3. Install dependencies:
+
+![image](https://github.com/user-attachments/assets/a3508f5b-8777-42dc-b1bb-48beeee4548b)
+
+4. Set up the database:
+
+![image](https://github.com/user-attachments/assets/5569c4b9-3dff-4da1-98b9-71002e708ee1)
 
 5. Configure the secret key:
-   Replace 'your-secret-key-here' in app.config['SECRET_KEY'] with a strong secret key
+      Replace 'your-secret-key-here' in app.config['SECRET_KEY'] with a strong secret key
    
 ## Running the Application
 
