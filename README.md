@@ -27,27 +27,33 @@ A simple blog application with user authentication and CRUD operations for blog 
 
 1. Clone the repository:
 
-![image](https://github.com/user-attachments/assets/fc1f0e55-1a69-4fae-9b9e-85b346eb4007)
+![image](https://github.com/user-attachments/assets/78013fc2-8e76-407f-8fb0-322296a11975)
 
 2. Create a virtual environment (recommended):
 
-![image](https://github.com/user-attachments/assets/a71a5db5-d37a-44bd-b97a-29ee07436ed8)
+![image](https://github.com/user-attachments/assets/71ab1a50-3782-4cd5-94b2-7fe6a9b56e29)
 
 3. Install dependencies:
 
 ![image](https://github.com/user-attachments/assets/a3508f5b-8777-42dc-b1bb-48beeee4548b)
 
-4. Set up the database:
+*(If requirment.txt doesn't exist, manually install these packages:)*
 
-![image](https://github.com/user-attachments/assets/5569c4b9-3dff-4da1-98b9-71002e708ee1)
+![image](https://github.com/user-attachments/assets/478f64ad-e03c-410f-b9fa-9e04e8332a96)
 
-5. Configure the secret key:
-      Replace 'your-secret-key-here' in app.config['SECRET_KEY'] with a strong secret key
-   
+4. Initialize the Database:
+
+Run Python interactively to create tables:
+![image](https://github.com/user-attachments/assets/4d4916dc-a701-401b-a8c3-c34060b7c9e5)
+
+5. Configure the Environment Variables:
+
+![image](https://github.com/user-attachments/assets/e0b501ea-228e-4d6d-b8a0-e19e1051ab8a)
+Create a .env file (optional but recommended for production):
+
 ## Running the Application
 
-bash
-python app.py
+![image](https://github.com/user-attachments/assets/1f3f3913-c027-4ade-b401-dc2a2e64416a)
 
 The application will be available at http://localhost:5000
 
