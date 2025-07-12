@@ -53,9 +53,11 @@ Create a .env file (optional but recommended for production):
 
 ## Running the Application
 
-![image](https://github.com/user-attachments/assets/1f3f3913-c027-4ade-b401-dc2a2e64416a)
+flask run
+or
+python3 flask_blog_app.py
 
-The application will be available at http://localhost:5000
+The application will be available at http://localhost:5000 or http://127.0.0.1:5000
 
 ## Project Structure
 
