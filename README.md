@@ -53,9 +53,14 @@ Create a .env file (optional but recommended for production):
 
 ## Running the Application
 
-flask run
-or
-python3 flask_blog_app.py
+### Run Command
+<img width="778" height="406" alt="image" src="https://github.com/user-attachments/assets/5f0ce122-93e3-4bbd-b72f-f5cc42824a45" />
+
+
+### Alternative
+
+<img width="494" height="58" alt="image" src="https://github.com/user-attachments/assets/82cd3b21-f9a1-4600-bd0e-bf489d7451b2" />
+
 
 The application will be available at http://localhost:5000 or http://127.0.0.1:5000
 
