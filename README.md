@@ -49,7 +49,8 @@ Run Python interactively to create tables:
 5. Configure the Environment Variables:
 
 ![image](https://github.com/user-attachments/assets/e0b501ea-228e-4d6d-b8a0-e19e1051ab8a)
-  Create a .env file (optional but recommended for production):
+
+Create a .env file (optional but recommended for production):
 
 ## Running the Application
 
