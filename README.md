@@ -59,7 +59,7 @@ The application will be available at http://localhost:5000
 
 ## Project Structure
 
-![image](https://github.com/user-attachments/assets/153e831d-6431-40c9-b459-bed8e073268e)
+<img width="1216" height="942" alt="image" src="https://github.com/user-attachments/assets/1f1bcd5b-9e9e-46f1-9124-46058253090e" />
 
 ## Configuration
 
