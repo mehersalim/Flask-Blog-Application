@@ -1,0 +1,105 @@
+<!--
+Developer: Meher Salim
+File: login.html
+Description: User login template that extends the base template. 
+Provides a secure form for user authentication with username/password fields,
+remember me option, and registration link.
+-->
+
+<!-- Inherits structure, styling, and scripts from base.html -->
+{% extends "base.html" %}
+
+<!-- Sets the page title to "Login" -->
+{% block title %}Login{% endblock %}
+
+<!-- Main content block that gets inserted into base.html -->
+{% block content %}
+<!-- Form container div for consistent styling -->
+<div class="form-container">
+  <!-- Page heading with styling:
+       h3: Medium heading size
+       mb-4: Bottom margin for spacing
+       text-center: Centers the heading -->
+  <h1 class="h3 mb-4 text-center">Login</h1>
+
+  <!-- Login form with POST method targeting login route
+       Styled with:
+       border: Visible border
+       p-4: Padding on all sides
+       rounded: Rounded corners
+       bg-white: White background -->
+  <form
+    method="POST"
+    action="{{ url_for('login') }}"
+    class="border p-4 rounded bg-white"
+  >
+    <!-- Username input field -->
+    <div class="mb-3">
+      <!-- Bottom margin for spacing -->
+      <label for="username" class="form-label">Username</label>
+      <input type="text" class="form-control" <!-- Bootstrap form styling -- />
+      id="username" name="username"
+      <!-- Form submission parameter name -->
+      required
+      <!-- Client-side validation -->
+      autocomplete="username"
+      <!-- Helps password managers -->
+      />
+    </div>
+
+    <!-- Password input field -->
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        name="password"
+        <!--
+        form
+        submission
+        parameter
+        name
+        --
+      />
+      required
+      <!-- Client-side validation -->
+      autocomplete="current-password"
+      <!-- Helps password managers -->
+      />
+    </div>
+
+    <!-- Remember me checkbox -->
+    <div class="mb-3 form-check">
+      <!-- Bootstrap checkbox styling -->
+      <input
+        type="checkbox"
+        class="form-check-input"
+        <!--
+        Proper
+        checkbox
+        styling
+        --
+      />
+      id="remember" name="remember"
+      <!-- Form submission parameter name -->
+      />
+      <label class="form-check-label" for="remember">Remember me</label>
+    </div>
+
+    <!-- Submit button 
+         w-100: Full width button
+         mb-3: Bottom margin for spacing -->
+    <button type="submit" class="btn btn-primary w-100 mb-3">Login</button>
+
+    <!-- Registration link section -->
+    <div class="text-center">
+      Don't have an account?
+      <!-- Link to registration page with no underline -->
+      <a href="{{ url_for('register') }}" class="text-decoration-none">
+        Register here
+      </a>
+    </div>
+  </form>
+</div>
+{% endblock %}

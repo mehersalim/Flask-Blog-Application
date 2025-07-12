@@ -1,0 +1,105 @@
+<!--
+Developer: Meher Salim
+File: edit_post.html
+Description: Template for editing existing blog posts. Extends the base template
+and provides a pre-filled form with existing post data for editing.
+-->
+
+<!-- Inherits structure and components from base.html -->
+{% extends "base.html" %}
+
+<!-- Overrides the title block to display "Edit Post" in browser tab -->
+{% block title %}Edit Post{% endblock %}
+
+<!-- Main content block that gets inserted into base.html's content area -->
+{% block content %}
+<!-- Form container div for consistent styling -->
+<div class="form-container">
+  <!-- Page heading with styling:
+       h3: Medium-sized heading
+       mb-4: Margin bottom spacing (1.5rem)
+       text-center: Horizontally centered text -->
+  <h1 class="h3 mb-4 text-center">Edit Post</h1>
+
+  <!-- Edit form with POST method targeting the edit_post route
+       Includes dynamic post_id in the action URL
+       Styled with:
+       border: Visible border
+       p-4: Padding on all sides (1.5rem)
+       rounded: Rounded corners
+       bg-white: White background -->
+  <form
+    method="POST"
+    action="{{ url_for('edit_post', post_id=post.id) }}"
+    class="border p-4 rounded bg-white"
+  >
+    <!-- Title input field group -->
+    <div class="mb-3">
+      <!-- Margin bottom spacing (1rem) -->
+      <label for="title" class="form-label">Title</label>
+      <input
+        type="text"
+        class="form-control"
+        <!--
+        Bootstrap
+        form
+        control
+        styling
+        --
+      />
+      id="title" name="title"
+      <!-- Form submission parameter name -->
+      value="{{ post.title }}"
+      <!-- Pre-fills with existing post title -->
+      required
+      <!-- Client-side validation requirement -->
+      />
+    </div>
+
+    <!-- Content textarea field group -->
+    <div class="mb-3">
+      <label for="content" class="form-label">Content</label>
+      <textarea
+        class="form-control"
+        id="content"
+        name="content"
+        <!--
+        form
+        submission
+        parameter
+        name
+        --
+      >
+        rows="6"          <!-- Default visible textarea height -->
+        required          <!-- Client-side validation requirement -->
+      >
+{{ post.content }}</textarea
+      >
+      <!-- Pre-fills with existing post content -->
+    </div>
+
+    <!-- Form action buttons container
+         d-grid: Display as grid layout
+         gap-2: Consistent spacing between buttons -->
+    <div class="d-grid gap-2">
+      <!-- Submit/Update button
+           btn-primary: Primary action styling (blue)
+           Includes save icon from Bootstrap Icons -->
+      <button type="submit" class="btn btn-primary">
+        <i class="bi bi-save"></i> Update Post
+      </button>
+
+      <!-- Cancel button that returns to post view
+           btn-outline-secondary: Secondary action styling (gray outline)
+           Includes x-circle icon from Bootstrap Icons
+           Links back to the specific post's view page -->
+      <a
+        href="{{ url_for('view_post', post_id=post.id) }}"
+        class="btn btn-outline-secondary"
+      >
+        <i class="bi bi-x-circle"></i> Cancel
+      </a>
+    </div>
+  </form>
+</div>
+{% endblock %}

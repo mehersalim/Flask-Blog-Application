@@ -1,0 +1,153 @@
+/*
+Designer: Meher Salim
+File: style.css
+Color Scheme:
+- Cream: #F5F5DC (primary background)
+- Sage: #B2AC88 (secondary/accent)
+- Forest Green: #228B22 (primary action color)
+*/
+
+/* Base layout styles */
+body {
+  min-height: 100vh; /* Ensure full viewport height */
+  display: flex;
+  flex-direction: column; /* Column layout for header-content-footer */
+  background-color: #f5f5dc; /* Cream background */
+  color: #333; /* Dark gray text for contrast */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Main content area - grows to push footer down */
+main {
+  flex: 1; /* Takes remaining vertical space */
+  padding: 2rem 0; /* Vertical spacing */
+}
+
+/* Post card styling with hover effect */
+.post-card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  background-color: white; /* White cards for content */
+  border-radius: 8px; /* Soft rounded corners */
+  border: 1px solid #e0e0d6; /* Light sage border */
+  margin-bottom: 1.5rem; /* Spacing between cards */
+}
+
+.post-card:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 10px 20px rgba(34, 139, 34, 0.1); /* Forest green tinted shadow */
+  border-color: #b2ac88; /* Sage border on hover */
+}
+
+/* Form container styling */
+.form-container {
+  max-width: 500px; /* Optimal form width */
+  margin: 0 auto; /* Center horizontally */
+  padding: 2rem;
+  background-color: white; /* White form background */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(178, 172, 136, 0.15); /* Subtle sage shadow */
+  border: 1px solid #e0e0d6; /* Light sage border */
+}
+
+/* Button styles */
+
+.btn-primary {
+  background-color: #228b22; /* Forest Green */
+  border-color: #1c7a1c; /* Slightly darker green */
+  color: white;
+  padding: 0.5rem 1.5rem; /* Comfortable click area */
+  border-radius: 6px; /* Consistent rounded corners */
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: #1c7a1c; /* Darker green on hover */
+  border-color: #166616;
+  transform: translateY(-1px); /* Subtle lift effect */
+  box-shadow: 0 4px 8px rgba(34, 139, 34, 0.2); /* Green tinted shadow */
+}
+
+/* Secondary button styling */
+.btn-outline-secondary {
+  color: #228b22; /* Forest Green text */
+  border-color: #228b22; /* Forest Green border */
+  background-color: transparent;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #f0f0e0; /* Light cream background */
+  color: #1c7a1c; /* Darker green text */
+}
+
+/* Navigation bar styling */
+.navbar {
+  background-color: #228b22 !important; /* Forest Green navbar */
+  box-shadow: 0 2px 10px rgba(34, 139, 34, 0.2);
+}
+
+.navbar-brand,
+.nav-link {
+  color: #f5f5dc !important; /* Cream text for contrast */
+}
+
+.nav-link:hover {
+  color: #ffffff !important; /* White on hover */
+  text-decoration: underline;
+}
+
+/* Footer styling */
+footer {
+  background-color: #b2ac88; /* Sage footer */
+  color: white;
+  padding: 1.5rem 0;
+  margin-top: 3rem; /* Space above footer */
+}
+
+/* Alert message styling */
+.alert {
+  border-radius: 6px;
+  border-left: 4px solid;
+}
+
+.alert-success {
+  background-color: #e8f5e9; /* Light green background */
+  border-color: #228b22; /* Forest Green accent */
+  color: #1b5e20; /* Dark green text */
+}
+
+.alert-danger {
+  background-color: #ffebee; /* Light red background */
+  border-color: #c62828; /* Red accent */
+  color: #b71c1c; /* Dark red text */
+}
+
+/* Text styling */
+.text-muted {
+  color: #b2ac88 !important; /* Sage for muted text */
+}
+
+/* Button group spacing */
+.btn-group {
+  gap: 0.75rem; /* Adds consistent spacing between buttons */
+}
+
+/* Form button spacing */
+.form-group button {
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .form-container {
+    padding: 1.5rem;
+    margin: 0 1rem;
+  }
+
+  .post-card {
+    margin-bottom: 1rem;
+  }
+
+  .btn-group {
+    gap: 0.5rem; /* Slightly smaller gap on mobile */
+  }
+}

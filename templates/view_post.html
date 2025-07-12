@@ -1,0 +1,99 @@
+<!--
+Developer: Meher Salim
+File: view_post.html
+Description: Template for viewing individual blog posts. Displays full post content,
+author information, timestamps, and provides edit/delete functionality for post authors.
+-->
+
+<!-- Inherits structure, styling, and scripts from base.html -->
+{% extends "base.html" %}
+
+<!-- Sets dynamic page title using the post title -->
+{% block title %}{{ post.title }}{% endblock %}
+
+<!-- Main content block that gets inserted into base.html -->
+{% block content %}
+<!-- Article container styled as a Bootstrap card with bottom margin -->
+<article class="card mb-4">
+  <div class="card-body">
+    <!-- Post title with display-5 for large, prominent heading -->
+    <h1 class="card-title display-5">{{ post.title }}</h1>
+
+    <!-- Post content with safe filter to render any HTML content 
+         mb-4 adds bottom margin for separation from metadata -->
+    <div class="card-text mb-4">{{ post.content|safe }}</div>
+
+    <!-- Metadata and action buttons container 
+         Uses flexbox to align items vertically center and justify space between -->
+    <div class="d-flex justify-content-between align-items-center">
+      <!-- Post metadata section with muted text -->
+      <div class="text-muted">
+        <!-- Author information with person icon -->
+        <i class="bi bi-person"></i> {{ post.author.username }} |
+        <!-- Creation date with calendar icon -->
+        <i class="bi bi-calendar"></i> {{ post.created_at.strftime('%B %d, %Y')
+        }}
+
+        <!-- Conditional display of edit timestamp if post was modified -->
+        {% if post.created_at != post.updated_at %}
+        <br /><small
+          >(Edited on {{ post.updated_at.strftime('%B %d, %Y %H:%M') }})</small
+        >
+        {% endif %}
+      </div>
+
+      <!-- Action buttons - only visible to post author -->
+      {% if current_user == post.author %}
+      <div class="btn-group">
+        <!-- Edit button linking to edit_post route -->
+        <a
+          href="{{ url_for('edit_post', post_id=post.id) }}"
+          class="btn btn-sm btn-outline-primary"
+          <!--
+          Small
+          outlined
+          primary
+          button
+          --
+        >
+          >
+          <i class="bi bi-pencil"></i> Edit
+          <!-- Pencil icon -->
+        </a>
+
+        <!-- Delete form (POST method for security) -->
+        <form
+          action="{{ url_for('delete_post', post_id=post.id) }}"
+          method="POST"
+          class="d-inline"
+          <!--
+          Displays
+          form
+          inline
+          with
+          other
+          elements
+          --
+        >
+          >
+          <!-- Delete button (should include JavaScript confirmation in production) -->
+          <button type="submit" class="btn btn-sm btn-outline-danger">
+            <i class="bi bi-trash"></i> Delete
+            <!-- Trash icon -->
+          </button>
+        </form>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</article>
+
+<!-- Back button container with top margin and centered alignment -->
+<div class="text-center mt-4">
+  <!-- Secondary button linking back to index page -->
+  <a href="{{ url_for('index') }}" class="btn btn-secondary">
+    <i class="bi bi-arrow-left"></i> Back to All Posts
+    <!-- Left arrow icon -->
+  </a>
+</div>
+{% endblock %}

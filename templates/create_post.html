@@ -1,0 +1,97 @@
+<!--
+Developer: Meher Salim
+File: create_post.html
+Description: Template for creating new blog posts. Extends the base template
+and provides a form for post title and content submission.
+-->
+
+<!-- Inherits from base.html template -->
+{% extends "base.html" %}
+
+<!-- Overrides the title block to display "New Post" as page title -->
+{% block title %}New Post{% endblock %}
+
+<!-- Begins content block that will be inserted into base.html -->
+{% block content %}
+<div class="form-container">
+  <!-- Page heading with Bootstrap styling classes:
+       - h3: Heading size 3
+       - mb-4: Margin bottom of 4 units (1.5rem)
+       - text-center: Centers the text horizontally -->
+  <h1 class="h3 mb-4 text-center">Create New Post</h1>
+
+  <!-- Post creation form:
+       - method="POST": Sends data via HTTP POST
+       - action: Points to create_post route
+       - border: Adds border
+       - p-4: Padding of 4 units (1.5rem) on all sides
+       - rounded: Rounded corners
+       - bg-white: White background -->
+  <form
+    method="POST"
+    action="{{ url_for('create_post') }}"
+    class="border p-4 rounded bg-white"
+  >
+    <!-- Title input field -->
+    <div class="mb-3">
+      <!-- Margin bottom of 3 units (1rem) -->
+      <label for="title" class="form-label">Title</label>
+      <input
+        type="text"
+        class="form-control"
+        <!--
+        Bootstrap
+        form
+        control
+        styling
+        --
+      />
+      id="title" name="title"
+      <!-- Field name for form submission -->
+      required
+      <!-- Makes field mandatory -->
+      />
+    </div>
+
+    <!-- Content textarea field -->
+    <div class="mb-3">
+      <label for="content" class="form-label">Content</label>
+      <textarea
+        class="form-control"
+        id="content"
+        name="content"
+        <!--
+        Field
+        name
+        for
+        form
+        submission
+        --
+      >
+        rows="6"          <!-- Default visible rows -->
+        required          <!-- Makes field mandatory -->
+      ></textarea
+      >
+    </div>
+
+    <!-- Form action buttons -->
+    <div class="d-grid gap-2">
+      <!-- Creates grid layout with gap between buttons -->
+      <!-- Submit button:
+           - btn-primary: Blue primary action button
+           - Includes send icon from Bootstrap Icons -->
+      <button type="submit" class="btn btn-primary">
+        <i class="bi bi-send"></i> Publish Post
+      </button>
+
+      <!-- Cancel button:
+           - Links back to index page
+           - btn-outline-secondary: Gray outline secondary button
+           - Includes x-circle icon from Bootstrap Icons -->
+      <a href="{{ url_for('index') }}" class="btn btn-outline-secondary">
+        <i class="bi bi-x-circle"></i> Cancel
+      </a>
+    </div>
+  </form>
+</div>
+{% endblock %}
